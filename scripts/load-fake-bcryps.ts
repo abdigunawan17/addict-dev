@@ -1,21 +1,12 @@
-import { Client } from "pg";
-import { loadEnvConfig } from "@next/env";
 import { faker } from "@faker-js/faker";
 import bcrypt from "bcrypt";
+import { getClient } from "@/db";
 
-const projctDir = process.cwd();
-loadEnvConfig(projctDir);
 
 async function loadFakeData(numUsers: number = 12) {
    
 
-    const client = new Client({
-        user: process.env.POSTGRES_USER,
-        host: process.env.POSTGRES_HOST,
-        database: process.env.POSTGRESS_NAME,
-        password: process.env.POSTGRES_PASSWORD,
-        port: parseInt(process.env.POSTGRESS_PORT!),
-    });
+    const client = await getClient();
 
     await client.connect();   
     
