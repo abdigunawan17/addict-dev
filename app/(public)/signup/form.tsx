@@ -16,7 +16,9 @@ function Form() {
         setErors([]);
 
         if(password != confirmPassword) {
-            errors.push("Heyy..password do not match!");
+            const catchError = [];
+            catchError.push("Heyy..password do not match!");
+            setErors(catchError);
             return;
         }
 
@@ -84,6 +86,13 @@ function Form() {
                 </div>
             </div>
             <button className="mt-4 bg-slate-900 text-white p-3 rounded-lg" type="submit">Sign Up</button>
+            {errors.map((error) => {
+                return (
+                    <div className="text-red-600">
+                        {error}
+                    </div>
+                );
+            })}
         </form>
     )
 }
