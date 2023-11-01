@@ -3,7 +3,7 @@
 export default function Footer() {
     return (
         <footer>
-            Footer
+            &copy; Addct Dev { new Date().getFullYear() }
         </footer>
     )
 }

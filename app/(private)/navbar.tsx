@@ -1,9 +1,41 @@
-
+import Link from "next/link"
+import { usePathname } from "next/navigation"
 
 export default function Navbar() {
+    const pathname = usePathname();
+
     return (
-        <nav>
-            navbar
+        <nav className="flex max-w-xl w-full p-5 bg-slate-800 rounded-lg my-2">
+            <ul className="flex flex-row justify-around w-full">
+                <li>
+                    <Link
+                        className={pathname.startsWith("/feed") ? "text-green-400" : ""} 
+                        href="/feed">
+                        Feed
+                    </Link>
+                </li>
+                <li>
+                    <Link
+                        className={pathname.startsWith("/profile") ? "text-green-400" : ""}  
+                        href="/profile">
+                        Profile
+                    </Link>
+                </li>
+                <li>
+                    <Link
+                        className={pathname.startsWith("/following") ? "text-green-400" : ""}  
+                        href="/following">
+                        Following
+                    </Link>
+                </li>
+                <li>
+                    <Link
+                        className={pathname.startsWith("/followers") ? "text-green-400" : ""}  
+                        href="/followers">
+                        Followers
+                    </Link>
+                </li>
+            </ul>
         </nav>
     )
 }
