@@ -53,7 +53,7 @@ export default function SearchBar() {
     }
 
     return (
-        <div className="flex flex-row max-w-md w-full justify-end relative" ref={ref}>
+        <div className="flex flex-row max-w-xl w-full justify-end relative" ref={ref}>
             <input 
                 onChange={handleUbah}
                 onClick={handleTekan}
