@@ -2,7 +2,7 @@
 
 import FeedContainer from "./feed-container";
 
-export default async function Feed() {
+export default function Feed() {
     return (
         <main>
             <h2>Feed</h2>

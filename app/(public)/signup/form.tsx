@@ -88,7 +88,7 @@ function Form() {
             <button className="mt-4 bg-slate-900 text-white p-3 rounded-lg" type="submit">Sign Up</button>
             {errors.map((error) => {
                 return (
-                    <div className="text-red-600">
+                    <div key={error} className="text-red-600">
                         {error}
                     </div>
                 );
